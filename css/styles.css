@@ -1,0 +1,358 @@
+body {
+  font-family: "Inter", sans-serif;
+  margin: 1rem;
+}
+@media (min-width: 768px) {
+  body {
+    margin: 2rem 4rem;
+  }
+}
+@media (min-width: 1200px) {
+  body {
+    margin: 3rem 5rem;
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+.header__menu {
+  display: flex;
+  align-items: center;
+}
+.header__menu-icon {
+  appearance: none;
+  border: none;
+  background-color: transparent;
+}
+.header__menu-icon:hover {
+  cursor: pointer;
+}
+.header__menu-icon:focus {
+  outline: 1px solid hsl(5, 85%, 63%);
+  outline-offset: 4px;
+}
+@media (min-width: 1200px) {
+  .header__menu-icon {
+    display: none;
+  }
+}
+.header__nav {
+  display: none;
+}
+@media (min-width: 1200px) {
+  .header__nav {
+    display: block;
+  }
+}
+.header ul li a {
+  text-decoration: none;
+  color: hsl(236, 13%, 42%);
+}
+.header ul li a:hover, .header ul li a:focus {
+  color: hsl(5, 85%, 63%);
+}
+.header ul li a:focus {
+  outline: 1px solid hsl(5, 85%, 63%);
+  outline-offset: 4px;
+}
+.header__links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+@media (min-width: 1200px) {
+  .header__links {
+    display: flex;
+    gap: 1rem;
+  }
+}
+
+.menu {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  background-color: hsl(36, 100%, 99%);
+  top: 0;
+  height: 100%;
+  width: 50%;
+  padding: 2rem;
+  position: fixed;
+  right: -100%;
+  opacity: 0;
+  transition: right 0.4s ease, opacity 0.3s ease;
+  visibility: hidden;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.menu.is-active {
+  right: 0;
+  opacity: 1;
+  visibility: visible;
+}
+@media (min-width: 1200px) {
+  .menu.is-active {
+    visibility: hidden;
+  }
+}
+.menu__nav {
+  margin-top: 5rem;
+  align-self: flex-start;
+}
+@media (min-width: 768px) {
+  .menu {
+    width: 40%;
+  }
+}
+@media (min-width: 1200px) {
+  .menu {
+    display: none;
+  }
+}
+.menu__close-icon {
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  right: 0;
+}
+.menu__close-icon:hover {
+  cursor: pointer;
+}
+.menu__close-icon:focus {
+  outline: 1px solid hsl(5, 85%, 63%);
+  outline-offset: 4px;
+}
+.menu ul li a {
+  font-size: 1.1rem;
+  text-decoration: none;
+  color: hsl(240, 100%, 5%);
+}
+.menu ul li a:hover, .menu ul li a:focus {
+  color: hsl(5, 85%, 63%);
+}
+.menu ul li a:focus {
+  outline: 1px solid hsl(5, 85%, 63%);
+  outline-offset: 4px;
+}
+.menu__links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (min-width: 1200px) {
+  body:has(.is-active)::after {
+    display: none;
+  }
+}
+body:has(.is-active)::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 5;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 1200px) {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .main-news {
+    grid-column: 1/3;
+    height: 100%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .main__content {
+    display: flex;
+    gap: 3rem;
+  }
+}
+.main__image img {
+  width: 100%;
+  height: 18rem;
+}
+.main__title {
+  font-weight: 800;
+  font-size: 2.7rem;
+  line-height: 1;
+}
+@media (min-width: 1200px) {
+  .main__title {
+    font-size: 2.5rem;
+  }
+}
+.main__info p {
+  color: hsl(236, 13%, 42%);
+  font-weight: 400;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 2rem 0;
+}
+.main__button {
+  text-decoration: none;
+  margin: 1rem 0;
+  padding: 1rem 2rem;
+  background-color: hsl(5, 85%, 63%);
+  color: hsl(240, 100%, 5%);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 0.9rem;
+}
+.main__button:hover {
+  background-color: hsl(240, 100%, 5%);
+  color: hsl(36, 100%, 99%);
+}
+.main__button:focus {
+  background-color: hsl(240, 100%, 5%);
+  color: hsl(36, 100%, 99%);
+  outline: 1px solid hsl(5, 85%, 63%);
+  outline-offset: 4px;
+}
+
+.new-news {
+  margin: 5rem 0 2rem 0;
+  padding: 1rem;
+  background-color: hsl(240, 100%, 5%);
+  color: hsl(36, 100%, 99%);
+}
+@media (min-width: 1200px) {
+  .new-news {
+    margin: 0;
+    height: 100%;
+  }
+}
+.new-news__item:not(:last-child) {
+  padding-bottom: 2rem;
+  border-bottom: 2px solid hsl(236, 13%, 42%);
+}
+.new-news__title {
+  color: hsl(35, 77%, 62%);
+  font-size: 2.3rem;
+  margin: 0;
+}
+.new-news__subtitle a {
+  text-decoration: none;
+  color: hsl(36, 100%, 99%);
+}
+.new-news__subtitle a:hover {
+  color: hsl(35, 77%, 62%);
+}
+.new-news__subtitle a:focus {
+  color: hsl(35, 77%, 62%);
+  outline: 1px solid hsl(35, 77%, 62%);
+  outline-offset: 4px;
+}
+.new-news__text {
+  color: hsl(233, 8%, 79%);
+  font-size: 0.9rem;
+}
+
+.top-news {
+  margin: 0;
+}
+@media (min-width: 1200px) {
+  .top-news {
+    grid-column: 1/4;
+  }
+}
+.top-news__item {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+.top-news__image {
+  width: 6rem;
+}
+.top-news__number {
+  color: hsl(5, 85%, 63%);
+  font-weight: 800;
+  font-size: 2rem;
+  margin: 0;
+}
+.top-news__subtitle {
+  margin: 0.5rem 0;
+}
+.top-news__subtitle a {
+  text-decoration: none;
+  color: hsl(240, 100%, 5%);
+}
+.top-news__subtitle a:hover {
+  color: hsl(5, 85%, 63%);
+  cursor: pointer;
+}
+.top-news__subtitle a:focus {
+  color: hsl(5, 85%, 63%);
+  outline: 1px solid hsl(5, 85%, 63%);
+  outline-offset: 4px;
+}
+.top-news__text {
+  color: hsl(236, 13%, 42%);
+  margin: 0;
+}
+.top-news__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+@media (min-width: 1200px) {
+  .top-news__list {
+    display: flex;
+    gap: 1rem;
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.attribution {
+  margin-bottom: 0;
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: hsl(240, 100%, 5%);
+}
+.attribution a {
+  color: hsl(5, 85%, 63%);
+}
+.attribution a:focus {
+  outline: 2px solid hsl(5, 85%, 63%);
+  outline-offset: 2px;
+}
+
+/*# sourceMappingURL=styles.css.map */

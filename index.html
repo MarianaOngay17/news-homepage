@@ -5,56 +5,184 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+
   <title>Frontend Mentor | News homepage</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 0.6875rem; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
 
-  Home
-  New
-  Popular
-  Trending
-  Categories
+  <header class="header">
 
-  The Bright Future of Web 3.0?
+    <a href="/" aria-label="Página de inicio de News">
+      <img src="assets/images/logo.svg" alt="News Logo">
+    </a>
 
-  We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. 
-  But is it really fulfilling its promise?
+    <div class="header__menu">
+      <button type="button" 
+              class="header__menu-icon" 
+              aria-expanded="false" 
+              aria-controls="main-navigation" 
+              aria-label="Abrir menú de navegación">
+        <img src="assets/images/icon-menu.svg" alt="" aria-hidden="true">
+      </button> <!--.header__menu-icon-->
 
-  Read more
+      <nav class="header__nav" aria-label="Navegación principal">
+        <ul class="header__links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">New</a></li>
+          <li><a href="#">Popular</a></li>
+          <li><a href="#">Trending</a></li>
+          <li><a href="#">Categories</a></li>
+        </ul><!--.header__links-->
+      </nav> <!--.heder__nav-->
 
-  New 
+    </div> <!--.header__menu-->
 
-  Hydrogen VS Electric Cars
-  Will hydrogen-fueled cars ever catch up to EVs?
+  </header> <!--.header-->
 
-  The Downsides of AI Artistry
-  What are the possible adverse effects of on-demand AI image generation?
+  <div class="menu" 
+    id="main-navigation" 
+    role="dialog" 
+    aria-modal="true" 
+    aria-label="Menú de navegación móvil"
+  >
+      <button type="button" 
+              class="menu__close-icon" 
+              aria-label="Cerrar menú">
+        <img src="assets/images/icon-menu-close.svg" alt="" aria-hidden="true">
+      </button>
+      <nav class="menu__nav">
+        <ul class="menu__links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">New</a></li>
+          <li><a href="#">Popular</a></li>
+          <li><a href="#">Trending</a></li>
+          <li><a href="#">Categories</a></li>
+        </ul> <!--.menu__links-->
+    </nav> <!--.menu__nav-->
+  </div> <!--.menu-->
 
-  Is VC Funding Drying Up?
-  Private funding by VC firms is down 50% YOY. We take a look at what that means.
+  <div class="container" id="main-content"> 
 
-  01
-  Reviving Retro PCs
-  What happens when old PCs are given modern upgrades?
+    <section class="main-news" aria-labelledby="hero-title">
+      <article class="main">
+        <picture class="main__image">
+          <source 
+            media="(min-width: 768px)" 
+            srcset="/assets/images/image-web-3-desktop.jpg" >
+          <img 
+            src="/assets/images/image-web-3-mobile.jpg" 
+            alt="Abstract 3D shapes representing the evolution of Web 3.0">
+        </picture> <!--.main__image-->
 
-  02
-  Top 10 Laptops of 2022
-  Our best picks for various needs and budgets.
+        <div class="main__content">
+          <h1 class="main__title" id="hero-title">The Bright Future of Web 3.0?</h1>
 
-  03
-  The Growth of Gaming
-  How the pandemic has sparked fresh opportunities.
+          <div class="main__info">
+            <p>
+              We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. 
+              But is it really fulfilling its promise?
+            </p>
+            <a href="#" class="main__button" aria-label="Read more about the future of Web 3.0">Read more</a>
+          </div> <!--.main__info-->
+        </div> <!--.main__content-->
+
+      </article> <!--.main-->
+    </section> <!--.main-news-->
+
+    <section class="new-news" aria-labelledby="new-title">
+      <h2 class="new-news__title">New</h2>
+
+      <div class="new-news__list">
+        <article class="new-news__item">
+          <h3 class="new-news__subtitle"><a href="#">Hydrogen VS Electric Cars</a></h3>
+          <p class="new-news__text">Will hydrogen-fueled cars ever catch up to EVs?</p>
+        </article> <!--.new-news__item-->
+
+        <article class="new-news__item">
+          <h3 class="new-news__subtitle"><a href="#">The Downsides of AI Artistry</a></h3>
+          <p class="new-news__text">What are the possible adverse effects of on-demand AI image generation?</p>
+        </article> <!--.new-news__item-->
+
+        <article class="new-news__item">
+          <h3 class="new-news__subtitle"><a href="#">Is VC Funding Drying Up?</a></h3>
+          <p class="new-news__text">Private funding by VC firms is down 50% YOY. We take a look at what that means.</p>
+        </article> <!--.new-news__item-->
+      </div> <!--.new-news__list-->
+     
+
+    </section> <!--.new-news-section-->
+
+    <section class="top-news" aria-label="Top articles">
+
+      <h2 class="sr-only">Top ranked articles</h2> <!--oculto, visible para screen readers-->
+
+      <ol class="top-news__list" role="list">
+
+        <li>
+          <article class="top-news__item">
+            <img src="assets/images/image-retro-pcs.jpg" alt="Retro PCs" class="top-news__image">
+            <div class="top-news__content">
+              <span class="top-news__number">01</span>
+              <h3 class="top-news__subtitle"> <a href="#">Reviving Retro PCs</a></h3>
+              <p class="top-news__text"> What happens when old PCs are given modern upgrades?</p>
+            </div> <!--.top-news__content-->
+          </article> <!--.top-news__item-->
+        </li>
+      
+        <li>
+          <article class="top-news__item">
+            <img src="assets/images/image-top-laptops.jpg" alt="Retro PCs" class="top-news__image">
+            <div class="top-news__content">
+              <span class="top-news__number">02</span>
+              <h3 class="top-news__subtitle"> <a href="#">Top 10 Laptops of 2022</a> </h3>
+              <p class="top-news__text"> Our best picks for various needs and budgets.</p>
+            </div> <!--.top-news__content-->
+          </article> <!--.top-news__item-->
+        </li>
+        
+        <li>
+          <article class="top-news__item">
+            <img src="assets/images/image-gaming-growth.jpg" alt="Retro PCs" class="top-news__image">
+            <div class="top-news__content">
+              <span class="top-news__number">03</span>
+              <h3 class="top-news__subtitle"> <a href="#">The Growth of Gaming</a> </h3>
+              <p class="top-news__text"> How the pandemic has sparked fresh opportunities.</p>
+            </div> <!--.top-news__content-->
+          </article> <!--.top-news__item-->
+        </li>
+
+      </ol>
+
+    </section> <!--.top-news-->
+
+  </div> <!--.container-->
   
-  <footer class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+  
+  <footer class="attribution" role="contentinfo">
+    <p>
+      Challenge by 
+      <a href="https://www.frontendmentor.io?ref=challenge" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        aria-label="Frontend Mentor (opens in a new tab)">
+        Frontend Mentor
+      </a>. 
+      Coded by 
+      <a href="https://www.frontendmentor.io/profile/MarianaOngay17" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        aria-label="Mariana Ongay Ortiz, view profile (opens in a new tab)">
+        Mariana Ongay Ortiz
+      </a>.
+    </p>
   </footer>
+
+  <script src="js/keyMovility.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
