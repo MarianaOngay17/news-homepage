@@ -7,7 +7,7 @@ Solución de  [News homepage challenge on Frontend Mentor](https://www.frontendm
 
 Desktop
 
-![alt text](image.png)
+![alt text](desktop.png)
 
 Tablet
 
